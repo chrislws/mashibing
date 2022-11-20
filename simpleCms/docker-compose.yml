@@ -1,0 +1,12 @@
+services:
+  db:
+    container_name: simpleCmsMysql
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: simpleCms
+      ports:
+        - "3316:3306"
+      volumes:
+        - ./data/db:/var/lib/mysql
